@@ -8,7 +8,6 @@
 # Each action is triggered using Invoke-WmiMethod to ensure that the SCCM client performs tasks such as policy retrieval,
 # hardware/software inventory, and software updates evaluation. 
 
-#After all actions are triggered, the script runs "gpupdate /force" to refresh the Group Policy settings on the remote computer.
 
 
 # Define the remote computer name
