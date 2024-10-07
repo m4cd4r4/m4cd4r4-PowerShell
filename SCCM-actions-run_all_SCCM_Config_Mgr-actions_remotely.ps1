@@ -12,7 +12,7 @@
 
 
 # Define the remote computer name
-$RemoteComputerName = "SAN122602"  # Replace with the target machine name or IP address
+$RemoteComputerName = "SAN97812"  # Replace with the target machine name or IP address
 
 # Ensure the current user has permissions to run remote commands
 if (-not (Test-Connection -ComputerName $RemoteComputerName -Count 1 -Quiet)) {
@@ -62,15 +62,6 @@ $scriptBlock = {
         catch {
             Write-Warning "Failed to run action: $ActionName. Error: $_"
         }
-    }
-
-    # Run gpupdate /force
-    try {
-        Write-Host "Running gpupdate /force to refresh Group Policy..."
-        Start-Process -FilePath "gpupdate" -ArgumentList "/force" -NoNewWindow -Wait -ErrorAction Stop
-    }
-    catch {
-        Write-Warning "Failed to run gpupdate /force. Error: $_"
     }
 }
 
